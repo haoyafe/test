@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="">
+			<h2>第一题</h2>
+			<input type="text" value="" id="input"><button class="btu">添加</button><br><br>
+			<ol class="ol">
+				
+			</ol><br>
+			<button class="btu1">清空列表</button>
+			<script src="js/jQuery.min.js"></script>
+		</div>
+		<hr>
+		<div>
+			<h2>第二题</h2>
+		<p>1、C; 2、B;3、C; 4、B; 5、D; 6、B; 7、C; 8、D; 9、A; 10、A;</p>
+		<p>11、C; 12、A; 13、B; 14、D; 15、B; 16、C; 17、A; 18、B; 19、A; 20、D;</p>
+		</div>
+		<hr>
+		<script>
+			{
+				$('.btu').click(function(){
+					if($('#input').val()==''){
+						alert('未填写内容！');
+					}else{
+						$('.ol').prepend(`<li><sapn class="first">X</span>${$('#input').val()}</li>`);  //  在被选元素的开头（仍位于内部）插入指定内容
+						$('.first').click(function(){
+							$(this).parent().remove()
+						});
+						$('#input').val('');
+					}
+				});
+				$('.btu1').click(function(){
+					$('.ol').remove();
+				});
+			}
+			
+		</script>
+		<h2>第三题</h2>
+		<xmp>
+			<?php
+			echo '<h2>第三题</h2>';
+			for($i=1;$i<=100;$i++){
+				echo $i.' ';
+			};
+			echo '<hr>';
+			?>
+		</xmp>
+		<hr>
+		<h2>第四题</h2>
+		<xmp>
+			<?php
+			echo '<h2>第四题</h2>';
+			for($i=1;$i<=100;$i++){
+				if($i%2==0){
+					echo $i.' ';
+				}
+			};
+			echo '<hr>';
+			?>
+		</xmp>
+		<hr>
+		<h2>第五题</h2>
+		<xmp>
+			<?php
+			echo '<h2>第四题</h2>';
+			for($i=1;$i<=100;$i++){
+				if($i%3==0&&$i%5==0){
+					echo 'foobar ';
+				}else if($i%3==0){
+					echo 'foo ';
+				}else if($i%5==0){
+					echo 'bar ';
+				}else{
+					echo $i.' ';
+				}
+			}
+			echo '<hr>';
+			?>
+		</xmp>
+		<hr>
+	</body>
+</html>
